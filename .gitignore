@@ -1,0 +1,14 @@
+node_modules/
+.workbuddy/
+channel_staffdeck_data.json
+category_staffdeck_data.json
+gen_ito_de.py
+extract_channel_data.py
+extract_category_data.py
+server_llm.js
+engine_only.js
+ito_de_check.js
+patch_*.py
+verify_*.js
+test_*.js
+missing_block.txt

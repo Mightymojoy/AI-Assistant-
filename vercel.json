@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/llm.js": {
+      "maxDuration": 30
+    }
+  },
+  "rewrites": [
+    { "source": "/api/llm", "destination": "/api/llm" }
+  ]
+}

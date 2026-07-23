@@ -203,7 +203,8 @@ const pct=x=>x==null?'—':x.toFixed(1)+'%';
 const MONTHS=['零','一','二','三','四','五','六','七','八','九','十','十一','十二'];
 const DEFAULT_YEAR=2026;
 const ASOF_M=7, ASOF_D=22;
-const LLM_URL = 'http://127.0.0.1:4888/llm';  // LLM后端代理
+// LLM后端代理：Vercel 用 /api/llm，本地用 127.0.0.1:4888
+const LLM_URL = (location.hostname==='127.0.0.1'||location.hostname==='localhost') ? 'http://127.0.0.1:4888/llm' : '/api/llm';
 const LLM_ENABLED = true;  // true = 启用AI增强（需 node server_llm.js）
 function cnMonth(q){
   let m=q.match(/(\d{1,2})\s*月/); if(m) return +m[1];

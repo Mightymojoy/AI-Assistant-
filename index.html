@@ -108,7 +108,7 @@ body{
   <div class="logo" id="ic-logo"></div>
   <div>
     <h1>ITO 经营分析AI助理</h1>
-    <div class="sub">天猫 · 京东 · 抖音   |  渠道业绩 / 品类分析 / 综合诊断</div>
+    <div class="sub">天猫 · 京东 · 抖音 · 小红书 · 视频号 · 达播  |  渠道业绩 / 品类分析 / 综合诊断</div>
   </div>
   <div class="spacer"></div>
   <span class="tag">v1.3 月份范围</span>
@@ -156,7 +156,7 @@ body{
   <div class="mbody">
     <div class="kv"><span>数据截至</span><b id="s-asof"></b></div>
     <div class="kv"><span>数据源</span><b>电商渠道业绩看板 (dashboard_data.json)</b></div>
-    <div class="kv"><span>覆盖渠道</span><b>天猫 京东 抖音</b></div>
+    <div class="kv"><span>覆盖渠道</span><b>天猫 京东 抖音 小红书 视频号 达播</b></div>
     <div class="kv"><span>预警阈值</span><b>达成率 &lt; 75% 红色预警</b></div>
     <div class="kv"><span>引擎类型</span><b>规则引擎（原型）</b></div>
     <div class="kv"><span>未来接 StaffDeck</span><b>替换为 LLM + 知识库检索</b></div>
@@ -270,7 +270,7 @@ function renderProfile(){
     '<div class="kv"><span>工号</span><b>DE-001</b></div>'+
     '<div class="kv"><span>能力</span><b>渠道问答 / 预警 / 趋势</b></div>'+
     '<div class="kv"><span>数据截至</span><b>'+DATA.asOf+'</b></div>'+
-    '<div class="kv"><span>管辖渠道</span><b>天猫 京东 抖音</b></div>';
+    '<div class="kv"><span>管辖渠道</span><b>天猫 京东 抖音 小红书 视频号 达播</b></div>';
   document.getElementById('asof').textContent=DATA.asOf;
   document.getElementById('s-asof').textContent=DATA.asOf;
   document.getElementById('overall').innerHTML=
@@ -656,7 +656,7 @@ function engine(q){
   }
   // 档案
   if(/你是谁|档案|介绍你|工号/.test(q)){
-    return {answer:'<b>ITO 经营分析AI助理</b><p>工号 DE-001 · 岗位 经营分析专员</p><p>管辖渠道：天猫 / 京东 / 抖音，数据截至 '+DATA.asOf+'，历史区间 2024-01~2026-07-22。</p>',
+    return {answer:'<b>ITO 经营分析AI助理</b><p>工号 DE-001 · 岗位 经营分析专员</p><p>管辖渠道：天猫 / 京东 / 抖音 / 小红书 / 视频号 / 达播，数据截至 '+DATA.asOf+'，历史区间 2024-01~2026-07-22。</p>',
       trace:['检索：识别意图 = 员工档案','分析：读取岗位/工号/管辖范围','结论：返回档案卡'],src};
   }
   // 经营分析报告（内置分析技能 v1.0）
